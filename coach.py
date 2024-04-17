@@ -5,7 +5,7 @@ def main():
     st.title("Engineering Coach")
     prefix = "sk-ant-api03"
     with open('data.txt', 'r') as file:
-        content = file.read()
+        content = file.read().replace("\n", "")
         
     # Create the Anthropic client
     client = anthropic.Anthropic(api_key=prefix+content)
