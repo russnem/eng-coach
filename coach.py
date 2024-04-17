@@ -18,14 +18,14 @@ def main():
         st.session_state.messages = []
         st.session_state.messages.append({"role": "user", "content": initPrompt})
         response = AI(st, client)
-        st.session_state.messages.append({"role": "assistant", "content": "Let's get started."})
+        st.session_state.messages.append({"role": "assistant", "content": "How can I help?"})
 
 
     for message in st.session_state.messages[1:]:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("What's up?"):
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
