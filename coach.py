@@ -3,9 +3,12 @@ import anthropic
 
 def main():
     st.title("Engineering Coach")
-
+    prefix = "sk-ant-api03"
+    with open('data.txt', 'r') as file:
+        content = file.read()
+        
     # Create the Anthropic client
-    client = anthropic.Anthropic(api_key='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')
+    client = anthropic.Anthropic(api_key=prefix+content)
 
     f = open("prompt.txt", "r")
     initPrompt = f.read()
